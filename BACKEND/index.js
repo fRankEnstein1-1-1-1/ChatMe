@@ -205,22 +205,33 @@ app.get("/unseen", async (req, res) => {
       return res.status(400).json({ message: "receiverId is required" });
     }
 
-    const unseenMessages = await Message.find({
-      receiverId,
-      seen: false,
-    }).select("senderId");
+    // group unseen messages by senderId
+    const unseenGrouped = await Message.aggregate([
+      { $match: { receiverId, seen: false } },
+      { $group: { _id: "$senderId", count: { $sum: 1 } } },
+    ]);
 
-    const senderIds = [...new Set(unseenMessages.map((msg) => msg.senderId))];
+    const senderIds = unseenGrouped.map((x) => x._id);
 
-    const users = await User.find({ username: { $in: senderIds } }).select(
-      "username name"
-    );
+    const users = await User.find({ username: { $in: senderIds } }).select("username");
 
-    res.json(users);
+    // merge count into users
+    const senders = users.map((u) => {
+      const found = unseenGrouped.find((x) => x._id === u.username);
+      return {
+        username: u.username,
+        count: found?.count || 0,
+      };
+    });
+
+    const totalUnseen = unseenGrouped.reduce((sum, x) => sum + x.count, 0);
+
+    res.json({ totalUnseen, senders });
   } catch (err) {
     res.status(500).json({ message: "Server error", error: err.message });
   }
 });
+
 
 // ✅ GET MESSAGES
 app.get("/messages", async (req, res) => {

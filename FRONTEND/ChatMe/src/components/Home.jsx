@@ -1,7 +1,7 @@
 import "./Home.css"
 import axios from "axios";
 import { data, Link,useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useState ,useEffect} from "react";
 import Avatar from "./Avatar";
 
 
@@ -12,8 +12,26 @@ function Home() {
 const [input, setinput] = useState("");
 const [results,setresults] = useState(null);
 const [error,seterror] = useState("");
+const [unseenCount, setUnseenCount] = useState(0);
+
 const currentuser = localStorage.getItem('username')
+
 console.log(`username = ${currentuser}`)
+useEffect(() => {
+  const fetchUnseenCount = async () => {
+    try {
+      const res = await axios.get(
+        `http://localhost:5000/unseen?receiverId=${currentuser}`
+      );
+      setUnseenCount(res.data.totalUnseen || 0);
+    } catch (err) {
+      console.log("error fetching unseen count");
+    }
+  };
+
+  fetchUnseenCount();
+}, [currentuser]);
+
 const handlechange = async (e) => {
   e.preventDefault();
   try {
@@ -70,7 +88,11 @@ navigate('/login');
              <input type="text" placeholder="Enter the usernames" value={input} onChange={(e)=>{setinput(e.target.value)}} />
         <button onClick={handlechange}>Search</button>
         <button onClick={handleRandomSearch}>Random</button>
-        <button onClick={handleunseen}>Unseen</button>
+      <button className="unseenBtn" onClick={handleunseen}>
+  Unseen
+  {unseenCount > 0 && <span className="badge">{unseenCount}</span>}
+</button>
+
        </div>
         <div className="Link">
           <div className="Avtar">

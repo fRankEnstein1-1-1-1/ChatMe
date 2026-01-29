@@ -118,3 +118,18 @@ p{
   align-items: center;
   gap:12px
 }
+.unseenBtn {
+  position: relative;
+}
+
+.badge {
+  position: absolute;
+  top: -6px;
+  right: -6px;
+  background: red;
+  color: white;
+  font-size: 12px;
+  padding: 3px 7px;
+  border-radius: 50px;
+  font-weight: bold;
+}

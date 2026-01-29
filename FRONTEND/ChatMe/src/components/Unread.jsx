@@ -13,7 +13,7 @@ function Unread() {
     const fetchUnseen = async () => {
       try {
         const res = await axios.get(`http://localhost:5000/unseen?receiverId=${currentuser}`);
-        setUnseen(res.data);
+        setUnseen(res.data.senders || []);
         setError("");
       } catch (err) {
         console.error(err);
@@ -29,15 +29,22 @@ function Unread() {
       <h2>Unread Messages</h2>
       {error && <p>{error}</p>}
       {unseen.length === 0 && !error && <p>No unseen messages</p>}
-      {unseen.map((user, index) => (
-        <div className="searchresult" key={index}>
-                  <div className="Rec" >
-                    <Avatar name={user.username} size={95}/>
-                  <h2>{user.username}</h2>
-                  </div>
-                   <Link to={`/chat/${user.username}`}>Chat with {user.username}</Link>
-                </div>
-      ))}
+     {unseen.map((user, index) => (
+  <div className="searchresult" key={index}>
+    <div className="Rec">
+      <Avatar name={user.username} size={95} />
+      
+      <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+        <h2>{user.username}</h2>
+
+        {user.count > 0 && <span className="badgeSmall">{user.count}</span>}
+      </div>
+    </div>
+
+    <Link to={`/chat/${user.username}`}>Chat with {user.username}</Link>
+  </div>
+))}
+
     </div>
   );
 }

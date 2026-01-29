@@ -1,0 +1,120 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+.home {
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  background-color: black;
+overflow-x: hidden;
+overflow-y: hidden;
+}
+
+ .Nav {
+  width: 100%;
+  background-color: purple;
+  height: 125px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.Nav input {
+    background-color: "#dbe9f4";
+  padding: 5px;
+  font-size: 16px;
+  width:55%;
+  margin: 12px;
+  border: 1px solid whitesmoke;
+  border-radius: 5px;
+  height: 35px;
+} 
+
+ .NavInp {
+  width: 80%;
+  padding: 5px;
+  margin:10px;
+  /* background-color: black; */
+} 
+.NavInp button{
+margin:5px;
+ border: 1px solid whitesmoke;
+}
+
+.Link{
+  width: 20%;
+    margin: 10px;
+    padding: 10px;
+    display: flex;
+    flex-direction: row;
+   
+}
+p{
+ font-family: Arial, Helvetica, sans-serif;
+    font-size: 26px;
+    font-weight: 400;
+    color: whitesmoke;
+}
+.Link button{
+  height:65px;
+  width:105px;
+  background-color: black;
+  align-self: center;
+  margin-left:15px;
+  font-size: larger;
+  font-family: Arial, Helvetica, sans-serif;
+  border: 1px solid whitesmoke;
+}
+
+.Avtar{
+  width: 60%;
+  place-items: center;
+  margin: 12px;
+  height: 85px;
+  display: flex;
+  flex-direction: row;
+  gap:5px
+}
+
+.searchresult {
+  display: flex;
+  flex-direction: row;          /* Row to align left and right */
+  align-items: center;          /* Center vertically */
+  justify-content: space-between; /* Push children to ends */
+  max-width: 100%;
+  background-color: rgb(34, 20, 20);
+  height: 150px;
+  padding: 15px 25px;
+  margin: 10px;
+  border: 1px solid whitesmoke;
+  border-radius: 25px;
+}
+
+.searchresult h2 {
+  margin: 0;
+  color: white;
+}
+
+.searchresult a {
+  color: turquoise;
+  background-color: whitesmoke;
+  padding: 8px 16px;
+  border-radius: 10px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+
+.Rec{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap:12px
+}

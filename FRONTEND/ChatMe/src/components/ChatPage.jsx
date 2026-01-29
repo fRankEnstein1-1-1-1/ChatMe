@@ -4,7 +4,7 @@ import io from "socket.io-client";
 import axios from "axios";
 import './ChatPage.css'
 import Avatar from "./Avatar";
-const socket = io("http://localhost:5000");
+const socket = io("https://chatme-k5zt.onrender.com");
 
 function ChatPage()
 {
@@ -37,7 +37,7 @@ function ChatPage()
 
 useEffect(() => {
   // Assuming you have senderId (person you're chatting with) and receiverId (current user)
-  axios.post("http://localhost:5000/markseen", {
+  axios.post("https://chatme-k5zt.onrender.com/markseen", {
     senderId: otheruser,
     receiverId: currentuser
   });

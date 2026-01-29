@@ -40,7 +40,7 @@ const handlechange = async (e) => {
       alert("please Provide a Username other wise do Random!!!")
     }
     else{
-    const res = await axios.get(`http://localhost:5000/search?username=${input}`);
+    const res = await axios.get(`https://chatme-k5zt.onrender.com/search?username=${input}`);
     const data = res.data;
     
     seterror("");
@@ -60,7 +60,7 @@ const handleRandomSearch = async(e)=>{
  
     e.preventDefault();
     try{
-      const res =  await axios.get(`http://localhost:5000/randomsearch?exclude=${currentuser}`);
+      const res =  await axios.get(`https://chatme-k5zt.onrender.com/randomsearch?exclude=${currentuser}`);
       const data = res.data;
       seterror("");
       setresults(data);

@@ -133,3 +133,261 @@ p{
   border-radius: 50px;
   font-weight: bold;
 }
+
+/* ✅ Small phones (0px - 360px) */
+@media (max-width: 360px) {
+
+  /* HOME */
+  .Nav {
+    flex-direction: column;
+    height: auto;
+    padding: 10px;
+    gap: 10px;
+    align-items: stretch;
+  }
+
+  .NavInp {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  .Nav input {
+    width: 100%;
+    margin: 8px 0;
+    font-size: 14px;
+    height: 36px;
+  }
+
+  .NavInp button {
+    width: 100%;
+    margin: 6px 0;
+    height: 38px;
+  }
+
+  .Link {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  p {
+    font-size: 18px;
+  }
+
+  .Link button {
+    height: 40px;
+    width: 90px;
+    font-size: 14px;
+    margin-left: 10px;
+  }
+
+  .Avtar {
+    width: auto;
+    height: auto;
+    margin: 0;
+  }
+
+  .searchresult {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    height: auto;
+    gap: 12px;
+    padding: 15px;
+  }
+
+  .searchresult a {
+    width: 100%;
+    text-align: center;
+  }
+
+  .Rec {
+    width: 100%;
+    justify-content: flex-start;
+  }}
+  @media (max-width: 480px) {
+
+  /* HOME */
+  .Nav {
+    flex-direction: column;
+    height: auto;
+    padding: 12px;
+    gap: 10px;
+  }
+
+  .NavInp {
+    width: 100%;
+    margin: 0;
+  }
+
+  .Nav input {
+    width: 100%;
+    margin: 8px 0;
+    font-size: 15px;
+  }
+
+  .NavInp button {
+    width: 100%;
+    margin: 6px 0;
+    height: 40px;
+  }
+
+  .Link {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    justify-content: space-between;
+  }
+
+  p {
+    font-size: 20px;
+  }
+
+  .Link button {
+    height: 45px;
+    width: 95px;
+    font-size: 15px;
+  }
+
+  .searchresult {
+    flex-direction: column;
+    height: auto;
+    gap: 12px;
+    padding: 15px;
+  }
+
+  .searchresult a {
+    width: 100%;
+    text-align: center;
+  }
+
+  .messages {
+    max-width: 80%;
+  }
+
+  .Input {
+    gap: 10px;
+  }
+
+  .Input input {
+    height: 48px;
+    font-size: 16px;
+  }
+}
+
+
+/* ✅ Tablets (481px - 768px) */
+@media (max-width: 768px) {
+
+  /* HOME */
+  .Nav {
+    height: auto;
+    flex-direction: column;
+    padding: 10px;
+    gap: 10px;
+    align-items: stretch;
+  }
+
+  .NavInp {
+    width: 100%;
+  }
+
+  .Nav input {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+  .NavInp button {
+    margin: 6px 6px 0 0;
+  }
+
+  .Link {
+    width: 100%;
+    justify-content: space-between;
+    padding: 0;
+  }
+
+  p {
+    font-size: 22px;
+  }
+
+  .searchresult {
+    height: auto;
+    padding: 15px;
+  }
+
+
+  /* LOGIN / SIGNUP */
+  .Main {
+    gap: 60px;
+    padding: 20px;
+  }
+
+  .Details {
+    width: 90%;
+    max-width: 450px;
+    height: auto;
+  }
+
+
+  /* CHAT PAGE */
+  .messages {
+    max-width: 70%;
+  }
+
+  .Input input {
+    font-size: 17px;
+  }
+}
+
+
+/* ✅ Laptops (1024px and above) */
+@media (min-width: 1024px) {
+
+  /* HOME */
+  .Nav {
+    height: 125px;
+    flex-direction: row;
+  }
+
+  .NavInp {
+    width: 80%;
+  }
+
+  .Link {
+    width: 20%;
+  }
+
+  .searchresult {
+    max-width: 1100px;
+    margin: 10px auto;
+  }
+
+  .Details {
+    width: 420px;
+  }
+
+  .messages {
+    max-width: 60%;
+  }
+}
+
+
+/* ✅ Large screens (1440px and above) */
+@media (min-width: 1440px) {
+  .searchresult {
+    max-width: 1200px;
+    margin: 12px auto;
+  }
+
+  .Details {
+    width: 480px;
+  }
+
+  p {
+    font-size: 28px;
+  }
+}

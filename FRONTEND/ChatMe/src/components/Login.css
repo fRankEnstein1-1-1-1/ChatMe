@@ -80,3 +80,34 @@
     margin: 35px;
     font-family: 'Times New Roman', Times, serif;
 }
+
+
+@media (max-width: 360px) {
+ .Main {
+    gap: 40px;
+    padding: 15px;
+  }
+
+  .Details {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+    padding: 20px;
+  }
+
+  .Info input {
+    width: 100%;
+    max-width: 250px;
+  }
+
+  .NavBar {
+    height: auto;
+    padding: 10px;
+  }
+
+  .NavBar h1 {
+    margin: 0;
+    font-size: 26px;
+  }
+}
+

@@ -12,7 +12,7 @@ function Unread() {
   useEffect(() => {
     const fetchUnseen = async () => {
       try {
-        const res = await axios.get(`http://localhost:5000/unseen?receiverId=${currentuser}`);
+        const res = await axios.get(`https://chatme-y7yq.onrender.com/unseen?receiverId=${currentuser}`);
         setUnseen(res.data.senders || []);
         setError("");
       } catch (err) {

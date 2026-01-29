@@ -15,7 +15,7 @@ function ChatPage()
      useEffect(() => {
   if (currentuser && otheruser) {
     // 1. Fetch old messages from MongoDB
-    fetch(`http://localhost:5000/messages?senderId=${currentuser}&receiverId=${otheruser}`)
+    fetch(`https://chatme-y7yq.onrender.com/messages?senderId=${currentuser}&receiverId=${otheruser}`)
       .then(res => res.json())
       .then(data => setmessage(data));
 

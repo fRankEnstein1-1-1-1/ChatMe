@@ -17,7 +17,7 @@ function SignUp() {
                 alert("Please Fill All details!");
             }
             else{
-            const res = await axios.post("http://localhost:5000/signup", {
+            const res = await axios.post("https://chatme-y7yq.onrender.com/signup", {
                 name, username, password
             });
             alert(res.data.message);

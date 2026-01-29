@@ -17,7 +17,7 @@ function Login()
                 alert("Please fill all details");
             }
             else{
-            const res = await axios.post("http://localhost:5000/login",{username,password});
+            const res = await axios.post("https://chatme-y7yq.onrender.com/login",{username,password});
             alert(res.data.message);
             localStorage.setItem("username",username);
             console.log(`${username} added to localstorage`);

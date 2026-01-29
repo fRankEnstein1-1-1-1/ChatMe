@@ -21,7 +21,7 @@ useEffect(() => {
   const fetchUnseenCount = async () => {
     try {
       const res = await axios.get(
-        `http://localhost:5000/unseen?receiverId=${currentuser}`
+        `https://chatme-y7yq.onrender.com/unseen?receiverId=${currentuser}`
       );
       setUnseenCount(res.data.totalUnseen || 0);
     } catch (err) {
